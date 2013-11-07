@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+        <com.girish.android.tools.MutableListPreference
+            android:entries="@array/Language"
+            android:entryValues="@array/languageAlias"
+            android:key="prefMutableListPreference"
+            android:summary="You can add and remove objects from this"
+            android:title="Mutable ListPreference" />
+        <com.girish.android.tools.CheckBoxListPreference
+            android:entries="@array/Language"
+            android:entryValues="@array/languageAlias"
+            android:key="prefCheckBoxListPreference"
+            android:summary="This is a list preference with check box"
+            android:title="CheckBox ListPreference" />
+        <com.girish.android.tools.MutableCheckBoxListPreference
+            android:entries="@array/Language"
+            android:entryValues="@array/languageAlias"
+            android:key="prefMutableCheckBoxListPreference"
+            android:summary="This is a list preference with check box with add and remove elements"
+            android:title="Mutable CheckBox ListPreference" />
+
+</PreferenceScreen>

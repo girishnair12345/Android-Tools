@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btnPrefActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preference Activity" />
+
+    <Button
+        android:id="@+id/btnInfiniteToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Infinite Toast" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btnTimeToast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:text="Time Based Toast (secs)" />
+
+        <EditText
+            android:id="@+id/edtTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:ems="3"
+            android:inputType="number" >
+            <requestFocus />
+        </EditText>
+
+    </LinearLayout>
+
+</LinearLayout>
