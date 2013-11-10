@@ -64,23 +64,6 @@ public class InfiniteToast {
 
 	
 	public void setDuration(int milliseconds) {
-		timeLimit = milliseconds;
-		if(!stop && milliseconds > 0){
-			mCountDownTimer = new CountDownTimer(milliseconds,TIMEOUT) {
-				
-				@Override
-				public void onTick(long millisUntilFinished) {
-					mToast.show();
-					mThread.interrupt();
-				}
-				
-				@Override
-				public void onFinish() {
-					InfiniteToast.this.cancel();
-				}
-			};
-			mCountDownTimer.start();
-		}
 		
 	}
 
