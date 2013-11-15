@@ -5,26 +5,37 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Toast;
 
-public class InfiniteToast {
+public class TimeBasedToast {
 	
 	private Toast mToast;
-	private boolean stop = false;
-	private Thread mThread;
 	private int timeLimit;
 	private CountDownTimer mCountDownTimer;
+	private boolean timerStarted = false;
 	private static final int TIMEOUT = 1800;
 	
-	public InfiniteToast(Context mContext, String message){
+	public TimeBasedToast(Context mContext, String message, int timeInSeconds){
+		this.timeLimit = timeInSeconds *1000;
 		mToast = Toast.makeText(mContext, message,Toast.LENGTH_SHORT);
+		mCountDownTimer = new CountDownTimer(timeLimit,TIMEOUT) {
+			
+			@Override
+			public void onTick(long millisUntilFinished) {
+				mToast.show();
+			}
+			
+			@Override
+			public void onFinish() {
+				mToast.cancel();
+				timerStarted = false;
+			}
+		};
 	}
 	
 	public void cancel() {
 		mToast.cancel();
-		stop = true;
-		if(mThread != null)
-			mThread.interrupt();
 		if(mCountDownTimer != null)
 			mCountDownTimer.cancel();
+		timerStarted = false;
 	}
 
 	
@@ -89,7 +100,8 @@ public class InfiniteToast {
 
 	
 	public void show() {
-		showInfiniteToast();
+		if(!timerStarted)
+		mCountDownTimer.start();
 	}
 	
 	
@@ -97,29 +109,5 @@ public class InfiniteToast {
 		return mToast;
 	}
 	
-	
-	private void showInfiniteToast() {
-		stop = false;
-		if(mThread != null)
-			mThread.interrupt();
-		mThread = new Thread() {
-			public void run() {
-				try {
-					while (true) {
-						if (!stop) {
-							mToast.show();
-						} else {
-							InfiniteToast.this.cancel();
-							return;
-						}
-						sleep(TIMEOUT);
-					}
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		};
-		mThread.start();
-	}
 	
 }

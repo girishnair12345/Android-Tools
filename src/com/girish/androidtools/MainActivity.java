@@ -1,6 +1,7 @@
 package com.girish.androidtools;
 
 import com.girish.android.tools.InfiniteToast;
+import com.girish.android.tools.TimeBasedToast;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -17,7 +18,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	Button btnPrefActivity,btnInfiniteToast,btnTimeToast;
 	EditText edtTime;
 	private Context mContext;
-	InfiniteToast inf;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -33,6 +34,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		btnTimeToast = (Button) findViewById(R.id.btnTimeToast);
 		btnTimeToast.setOnClickListener(this);
+		
 		edtTime = (EditText) findViewById(R.id.edtTime);
 	}
 
@@ -44,9 +46,8 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 			
 		case R.id.btnInfiniteToast:
-			
+			InfiniteToast inf = new InfiniteToast(mContext, "Toast");
 			if(btnInfiniteToast.getText().equals("Infinite Toast")){
-				inf = new InfiniteToast(mContext, "Toast");
 				inf.setText("Infinite Toast");
 				inf.show();
 				btnInfiniteToast.setText("Stop Toast");
@@ -59,9 +60,15 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.btnTimeToast:
 			try{
 				int time = Integer.parseInt(edtTime.getText().toString());
-				inf = new InfiniteToast(mContext, "Time for " + time + " seconds");
-				inf.setDuration(time);
-				inf.show();
+				TimeBasedToast mTimeBasedToast = new TimeBasedToast(mContext, "Time for " + time + " seconds",time);
+				
+				if(btnTimeToast.getText().equals("Timed Toast")){
+					mTimeBasedToast.show();
+					btnTimeToast.setText("Stop Toast");
+				}else{
+					mTimeBasedToast.cancel();
+					btnTimeToast.setText("Timed Toast");
+				}
 			}catch (NumberFormatException e) {
 				Toast.makeText(mContext, "Time is not valid", Toast.LENGTH_SHORT).show();
 			}

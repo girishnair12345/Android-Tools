@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.7"
-            android:text="Time Based Toast (secs)" />
+            android:text="Timed Toast" />
 
         <EditText
             android:id="@+id/edtTime"
@@ -33,7 +33,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
             android:ems="3"
+            android:hint="Seconds"
             android:inputType="number" >
+
             <requestFocus />
         </EditText>
 
