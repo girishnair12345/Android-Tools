@@ -3,8 +3,6 @@ package com.girish.samples;
 import com.girish.android.tools.CheckBoxListPreference;
 import com.girish.android.tools.MutableCheckBoxListPreference;
 import com.girish.android.tools.MutableListPreference;
-import com.girish.sampleUsage.R;
-
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;

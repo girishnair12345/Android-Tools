@@ -2,8 +2,6 @@ package com.girish.samples;
 
 import com.girish.android.tools.InfiniteToast;
 import com.girish.android.tools.TimeBasedToast;
-import com.girish.sampleUsage.R;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;

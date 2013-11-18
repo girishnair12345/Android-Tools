@@ -18,6 +18,7 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
+        public static final int bntCustomSharedPreference=0x7f080004;
         public static final int btnInfiniteToast=0x7f080001;
         public static final int btnPrefActivity=0x7f080000;
         public static final int btnTimeToast=0x7f080002;

@@ -13,12 +13,13 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.hardware.Camera.ShutterCallback;
 import android.preference.PreferenceManager;
 import android.util.Base64;
 import android.util.Base64InputStream;
 import android.util.Base64OutputStream;
 
-public class CustomSharedPreference implements SharedPreferences{
+public class CustomSharedPreference implements SharedPreferences,Editor{
 
 	private SharedPreferences mSharedPreferences;
 	private SharedPreferences.Editor mEditor;
@@ -41,6 +42,8 @@ public class CustomSharedPreference implements SharedPreferences{
 	
 	public Object getObject(String key, Object defValue){
 		key = put(key);
+		if(key == null)
+			return null;
 		String mString = mSharedPreferences.getString(key, null);
 		if(mString == null)
 			return defValue;
@@ -48,10 +51,13 @@ public class CustomSharedPreference implements SharedPreferences{
 		return obj;
 	}
 	
-	public void putObject(String key, Object value){
+	public boolean putObject(String key, Object value){
 		key = put(key);
+		if(key == null)
+			return false;
 		String mString = put(objectToString(value));
 		mEditor.putString(key, mString);
+		return mEditor.commit();
 	}
 	
 	
