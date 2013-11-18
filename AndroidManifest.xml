@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.girish.samples.MyPreferenceActivity"></activity>
+        <activity android:name="com.girish.samples.MySharedPreferenceActivity"></activity>
     </application>
 
 </manifest>
