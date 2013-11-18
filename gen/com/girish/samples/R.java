@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.girish.androidtools;
+package com.girish.samples;
 
 public final class R {
     public static final class array {
