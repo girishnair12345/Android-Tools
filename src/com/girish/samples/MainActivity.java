@@ -86,8 +86,10 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 
 		case R.id.bntCustomSharedPreference:
+//			CustomSharedPreference mPrefs = new CustomSharedPreference(
+//					getApplicationContext());
 			CustomSharedPreference mPrefs = new CustomSharedPreference(
-					getApplicationContext());
+					"file",Context.MODE_PRIVATE, getApplicationContext());
 			Employee employee = new Employee("Girish", 25, true, "Google", 5555);
 			mPrefs.enableEncryption("girish");
 			mPrefs.putObject("Test", employee);
@@ -104,18 +106,18 @@ public class MainActivity extends Activity implements OnClickListener {
 			mPrefs.putFloat("float", 1.5f);
 			mPrefs.putInt("int", 15);
 			mPrefs.putString("string", "my value");
-			//Work Needed
-//			Set<String> arg1 = new TreeSet<String>();
-//			arg1.add("one");
-//			arg1.add("Two");
-//			mPrefs.putStringSet("string set", arg1);
+			//Works in API 11 or greater
+			Set<String> arg1 = new TreeSet<String>();
+			arg1.add("one");
+			arg1.add("Two");
+			mPrefs.putStringSet("string set", arg1);
 			mPrefs.commit();
 			
 			Log.d(LOG_TAG,"Get Prefs "+ mPrefs.getBoolean("bool", false));
 			Log.d(LOG_TAG,"Get Prefs "+ mPrefs.getFloat("float", 0));
 			Log.d(LOG_TAG,"Get Prefs "+ mPrefs.getInt("int", 0));
 			Log.d(LOG_TAG,"Get Prefs "+ mPrefs.getString("string", null));
-//			Log.d(LOG_TAG,"Get Prefs"+ mPrefs.getStringSet("string set", null));
+			Log.d(LOG_TAG,"Get Prefs"+ mPrefs.getStringSet("string set", null));
 			
 			break;
 		}

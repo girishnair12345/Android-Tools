@@ -50,6 +50,38 @@ mTimeBasedToast.show();
 //To cancel
 mTimeBasedToast.cancel();
 
+Custom SharedPreference
+This is the customized version of the shared preference, You work as if your working with a SharedPrefere or SharedPreference.Editor
+Advantages
+Added Encryption to encrypt data saved to the preferences
+Add objects and also saved them to your preferences
+
+Usage
+CustomSharedPreference mPrefs = new CustomSharedPreference(					getApplicationContext());
+OR
+CustomSharedPreference mPrefs = new CustomSharedPreference( "prefsName",Context.MODE_PRIVATE, getApplicationContext());
+
+You can place elements like this
+mPrefs.putBoolean("bool", true);
+mPrefs.putFloat("float", 1.5f);
+mPrefs.putInt("int", 15);
+mPrefs.putString("string", "my value");
+mPrefs.putStringSet("string set", mSet);// Works for API 11 or greater only
+mPrefs.putObject("object", new Object()); // EVEN objects
+mPrefs.commit();//Saved values
+
+//You can retrieve the values using
+mPrefs.getBoolean("bool", false);
+mPrefs.getFloat("float", 0);
+mPrefs.getInt("int", 0);
+mPrefs.getString("string", null);
+mPrefs.getStringSet("string set", null)
+mPrefs.getObject("Test", null);
+
+//To enable encryption
+mPrefs.enableEncryption("key for encryption");
+//To disable encryption
+mPrefs.disableEncryption();
 
 You can mail me at gnairgithub@gmail.com if you wish to want some improvement or need some functionality that needs to be added on
 Thank you
