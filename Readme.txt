@@ -67,6 +67,7 @@ mPrefs.putFloat("float", 1.5f);
 mPrefs.putInt("int", 15);
 mPrefs.putString("string", "my value");
 mPrefs.putStringSet("string set", mSet);// Works for API 11 or greater only
+//Note: Any Object that you put must implement the Serializable interface
 mPrefs.putObject("object", new Object()); // EVEN objects
 mPrefs.commit();//Saved values
 

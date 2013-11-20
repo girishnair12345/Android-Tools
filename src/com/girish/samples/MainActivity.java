@@ -92,6 +92,7 @@ public class MainActivity extends Activity implements OnClickListener {
 					"file",Context.MODE_PRIVATE, getApplicationContext());
 			Employee employee = new Employee("Girish", 25, true, "Google", 5555);
 			mPrefs.enableEncryption("girish");
+			//Any Object that you put must implement the Serializable interface
 			mPrefs.putObject("Test", employee);
 			mPrefs.commit();
 			Employee mEmployee = (Employee) mPrefs.getObject("Test", null);
