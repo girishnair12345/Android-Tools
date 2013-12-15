@@ -16,9 +16,14 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
+        public static final int loading1=0x7f020001;
+        public static final int loading2=0x7f020002;
+        public static final int loadingbig=0x7f020003;
     }
     public static final class id {
+        public static final int GIFView=0x7f080006;
         public static final int bntCustomSharedPreference=0x7f080004;
+        public static final int btnGifImagePlayer=0x7f080005;
         public static final int btnInfiniteToast=0x7f080001;
         public static final int btnPrefActivity=0x7f080000;
         public static final int btnTimeToast=0x7f080002;
@@ -26,6 +31,7 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int gif_image=0x7f030001;
     }
     public static final class string {
         public static final int app_name=0x7f060000;

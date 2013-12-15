@@ -21,7 +21,7 @@ import com.girish.android.tools.TimeBasedToast;
 
 public class MainActivity extends Activity implements OnClickListener {
 	Button btnPrefActivity, btnInfiniteToast, btnTimeToast,
-			btnCustomSharedPreference;
+			btnCustomSharedPreference,btnGifImagePlayer;
 	EditText edtTime;
 	private Context mContext;
 	private static String LOG_TAG = "Android Tools";
@@ -44,6 +44,9 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		btnCustomSharedPreference = (Button) findViewById(R.id.bntCustomSharedPreference);
 		btnCustomSharedPreference.setOnClickListener(this);
+		
+		btnGifImagePlayer = (Button) findViewById(R.id.btnGifImagePlayer);
+		btnGifImagePlayer.setOnClickListener(this);
 	}
 
 	@Override
@@ -121,6 +124,11 @@ public class MainActivity extends Activity implements OnClickListener {
 			Log.d(LOG_TAG,"Get Prefs"+ mPrefs.getStringSet("string set", null));
 			
 			break;
+			
+		case R.id.btnGifImagePlayer:
+			startActivity(new Intent(MainActivity.this, GIFPlayer.class));
+			break;
+			
 		}
 	}
 

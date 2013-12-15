@@ -24,6 +24,7 @@
         </activity>
         <activity android:name="com.girish.samples.MyPreferenceActivity"></activity>
         <activity android:name="com.girish.samples.MySharedPreferenceActivity"></activity>
+        <activity android:name="com.girish.samples.GIFPlayer"></activity>
     </application>
 
 </manifest>

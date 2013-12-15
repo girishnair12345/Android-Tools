@@ -84,6 +84,18 @@ mPrefs.enableEncryption("key for encryption");
 //To disable encryption
 mPrefs.disableEncryption();
 
+GIF Image Player
+Now you can show your gif files as normal images
+In you XML Layout just use
+
+	<com.girish.android.tools.GIFView
+        android:id="@+id/GIFView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/loadingbig" />
+
+And place your gif files in drawable folder and you can directly view it
+		
 You can mail me at gnairgithub@gmail.com if you wish to want some improvement or need some functionality that needs to be added on
 Thank you
 :)
