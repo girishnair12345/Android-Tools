@@ -72,6 +72,7 @@ public class CustomSharedPreference implements SharedPreferences,Editor{
 		} catch (Exception e) {
 			Log.e(LOG_TAG, "Exception " + e.getMessage());
 			e.printStackTrace();
+			throw new RuntimeException("Exception " + e.getMessage());
 		} 
 		return obj;
 	}
@@ -87,6 +88,7 @@ public class CustomSharedPreference implements SharedPreferences,Editor{
 		} catch (IOException e) {
 			Log.e(LOG_TAG, "IOException " + e.getMessage());
 			e.printStackTrace();
+			throw new RuntimeException("IOException " + e.getMessage());
 		}
 		if(mString == null)
 			return mEditor;
@@ -102,8 +104,8 @@ public class CustomSharedPreference implements SharedPreferences,Editor{
 			} catch (Exception e) {
 				Log.e(LOG_TAG, "Exception " + e.getMessage());
 				e.printStackTrace();
+				throw new RuntimeException("Exception " + e.getMessage());
 				return null;
-				
 			}
 		}
 		return plainText;
@@ -116,6 +118,7 @@ public class CustomSharedPreference implements SharedPreferences,Editor{
 			} catch (Exception e) {
 				Log.e(LOG_TAG, "Exception " + e.getMessage());
 				e.printStackTrace();
+				throw new RuntimeException("Exception " + e.getMessage());
 				return null;
 				
 			}
