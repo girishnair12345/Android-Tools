@@ -105,7 +105,7 @@ public class CustomSharedPreference implements SharedPreferences,Editor{
 				Log.e(LOG_TAG, "Exception " + e.getMessage());
 				e.printStackTrace();
 				throw new RuntimeException("Exception " + e.getMessage());
-				return null;
+				
 			}
 		}
 		return plainText;
@@ -119,7 +119,6 @@ public class CustomSharedPreference implements SharedPreferences,Editor{
 				Log.e(LOG_TAG, "Exception " + e.getMessage());
 				e.printStackTrace();
 				throw new RuntimeException("Exception " + e.getMessage());
-				return null;
 				
 			}
 		}
